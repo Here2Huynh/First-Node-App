@@ -50,4 +50,19 @@ const path = require('path')
 
 var pathObj = path.parse(__filename)
 
-console.log(pathObj)
+// console.log(pathObj)
+
+
+
+const os = require('os')
+
+var uptime = os.uptime()
+var totalMemory = os.totalmem()
+var freeMemory = os.freemem()
+var platform = os.platform()
+var type = os.type()
+
+console.log(`Total Memory: ${totalMemory}`)
+console.log(`Free Memory: ${freeMemory}`)
+console.log(`Platform: ${platform}`)
+console.log(`Type: ${type}`)
