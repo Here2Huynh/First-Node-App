@@ -21,12 +21,23 @@
 
 // console.log(__filename)
 // console.log(__dirname)
+
 var url = 'http://mylogger.io/log'
 
-function log (message) {
-    // send an HTTP request
-    console.log(message)
+const EventEmitter = require('events') 
+
+class Logger extends EventEmitter {
+    log (message) {
+        // send an HTTP request
+        console.log(message)
+    
+        // raise event
+        this.emit('logging', { id: 1, url: 'http://'})
+    }
 }
 
-module.exports = log  // makes this function public 
+
+
+module.exports = Logger  // makes this function public 
+
 
